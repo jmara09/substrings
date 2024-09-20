@@ -1,7 +1,6 @@
 def substrings(words, dictionary)
-  words = words.downcase
   dictionary.reduce(Hash.new(0)) do |hash, dict_word|
-    words.split.each do |word|
+    words.downcase.split.each do |word|
       hash[dict_word] += 1 if word.include?(dict_word)
     end
     hash
